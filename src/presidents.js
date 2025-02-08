@@ -419,20 +419,34 @@ const presidents = [
 
 
 // Iteration 1 | Names of All Presidents - `map()`
-function getNames(presidentsArr) {}
-
+function getNames(presidentsArr) {
+  const presidentNames = presidentsArr.map(president => president.name);
+  return presidentNames;
+}
 
 
 
 // Iteration 2 | Democratic Presidents - `filter()`
-function getDemocraticPresidents(presidentsArr) {}
-
+function getDemocraticPresidents(presidentsArr) {
+  const democraticParty = presidentsArr.filter(
+    president => president.party == "Democratic");
+    return democraticParty;
+}
 
 
 
 // Iteration 3 | Count Years in Office - reduce()
-function  countYearsInOffice(presidentsArr) {}
-
+function  countYearsInOffice(presidentsArr) {
+ return presidentsArr.reduce((acc, president) => {
+  if(president.leftOffice !== null) { 
+    acc.push({name: president.name, YearsofService: president.leftOffice - president.tookOffice
+  
+      });
+    }
+  return acc;
+  }, []);
+}
+// its broke !
 
 
 
